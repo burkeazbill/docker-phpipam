@@ -2,12 +2,12 @@ FROM debian:wheezy
 
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
-                                && apt-get -y install apache2 libapache2-mod-php5 php5-mysql vim curl php5-gmp php5-ldap php-pear \
+                                && apt-get -y install apache2 libapache2-mod-php5 php5-mysql vim curl php5-gmp php5-ldap php-pear php5-curl php5-mcrypt \
                                 && apt-get clean \
                                 && mkdir /var/www/html/
 
-ADD https://github.com/phpipam/phpipam/archive/1.2.tar.gz /tmp
-RUN tar -xzf /tmp/1.2.tar.gz -C /var/www/html --strip-components=1
+ADD https://github.com/phpipam/phpipam/archive/1.3.tar.gz /tmp
+RUN tar -xzf /tmp/1.3.tar.gz -C /var/www/html --strip-components=1
 
 COPY 000-default.conf /etc/apache2/sites-available/default
 COPY config.php /var/www/html

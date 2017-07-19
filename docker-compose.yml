@@ -17,7 +17,7 @@ services:
           labels: "mariadb"
 
   phpipam:
-       image: rafpe/docker-phpipam
+       image: burkeazbill/docker-phpipam
        environment:
           - MYSQL_DB_HOSTNAME=mariadb
           - MYSQL_DB_USERNAME=phpipam

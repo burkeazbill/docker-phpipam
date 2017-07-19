@@ -3,14 +3,14 @@ phpipam is an open-source web IP address management application. Its goal is to 
 
 Goal of this repository is to provide a lightweight docker image that can be used to have applciation running quickly.
 
-![alt text](https://a.fsdn.com/con/app/proj/phpipam/screenshots/Screen%20Shot%202014-03-13%20at%2016.18.25.png)
+![NEED NEW SCREENSHOT](https://a.fsdn.com/con/app/proj/phpipam/screenshots/Screen%20Shot%202014-03-13%20at%2016.18.25.png)
 
 ## Running the application
 I have tried to make it as simple as possible to run the application quickly. Therefore you can use docker-compose or just docker engine itself to start.
 
 ### Docker compose
 ```
-wget https://raw.githubusercontent.com/RafPe/docker-phpipam/master/docker-compose.yml
+wget https://raw.githubusercontent.com/burkeazbill/docker-phpipam/master/docker-compose.yml
 docker-compose up -d
 ```
 The above will start complete service which includes mysql container with database.
@@ -18,8 +18,8 @@ Before running you might want to change passwords being used as they have not be
 
 ### Docker engine
 ```
-docker run -d --name SomeContainerNameIPAM \
-           -p "127.0.0.1:8181:80" \
+docker run -d --name phpIPAM \
+           -p "8181:80" \
            -e MYSQL_DB_HOSTNAME=Welcome1
            -e MYSQL_DB_USERNAME=admin
            -e MYSQL_DB_PASSWORD=Password1
@@ -66,4 +66,5 @@ PROXY_USEAUTH  # Enable/Disable Proxy authentication
 ```
 
 ## Change log
-* **v1.0.0** : Initial documentation and blog write up.
+* **v1.0.0** : Initial fork RafPe/docker-phpipam
+- Updated to 1.3, added php5-mcrypt and php5-curl -- required for API
