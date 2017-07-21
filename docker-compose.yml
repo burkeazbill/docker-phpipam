@@ -4,10 +4,10 @@ services:
   mariadb:
        image: mariadb:latest
        environment:
-         - MYSQL_ROOT_PASSWORD=password1
+         - MYSQL_ROOT_PASSWORD=VMware1!
          - MYSQL_DATABASE=phpipam
          - MYSQL_USER=phpipam
-         - MYSQL_PASSWORD=NieWyobrazalneHaslo
+         - MYSQL_PASSWORD=VMware1!
        restart: always
        logging:
         driver: json-file
@@ -21,11 +21,11 @@ services:
        environment:
           - MYSQL_DB_HOSTNAME=mariadb
           - MYSQL_DB_USERNAME=phpipam
-          - MYSQL_DB_PASSWORD=NieWyobrazalneHaslo
+          - MYSQL_DB_PASSWORD=VMware1!
           - MYSQL_DB_NAME=phpipam
           - MYSQL_DB_PORT=3306
        ports:
-          - "127.0.0.1:8181:80"
+          - "8181:80"
        restart: always
        depends_on:
           - mariadb
@@ -35,3 +35,15 @@ services:
            max-size: "100m"
            max-file: "3"
            labels: "phpipam"
+  myadmin:
+      image: phpmyadmin/phpmyadmin
+      environment:
+        - PMA_HOST=mariadb
+        - PMA_PORT=3306
+        - PMA_USER=phpipam
+        - PMA_PASSWORD=VMware1!
+      ports:
+        - "8282:80"
+      restart: always
+      depends_on:
+        - mariadb

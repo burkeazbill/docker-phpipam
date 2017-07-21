@@ -64,7 +64,24 @@ PROXY_USER     # Proxy Username
 PROXY_PASS     # Proxy Password  
 PROXY_USEAUTH  # Enable/Disable Proxy authentication  
 ```
+### VMware vPod use: (HOL / Livefire /vRO MasterClass)
+Once you have run docker-compose up -d 
+1) Visit http://yourserver:8181 and choose the option to "Migrate phpipam installation"
+2) On the next screen, click "Automatic database migration"
+3) Enter your MySQL username and password (IE, phpipam / VMware1! )
+4) Click the "Show advanced options" button and uncheck all three boxes
+5) Click the M"igrate phpipam database", then click "Continue"
+
+You may now login with the following username / password: admin / VMware1!
+NOTE: The REST API has been enabled already in this configuration. To get started, you must:
+POST (using basic auth -- admin / VMware1! ) to http://yourserver:8181/api/rest/users/
+Then retrieve the token from the return and contine with your API usage as per the docs found here: https://phpipam.net/api/api_documentation/
 
 ## Change log
 * **v1.0.0** : Initial fork RafPe/docker-phpipam
 - Updated to 1.3, added php5-mcrypt and php5-curl -- required for API
+
+* **v1.0.1** : Added phpMyAdmin container to docker-compose, running on port 8282
+- Added a MIGRATE.sql to phpipam for use with VMware vPods (IE: HOLS, Livefire, vRO Master Class)
+- Commented out (via Dockerfile) the 511 ErrorDocument in the API .htaccess file since it was being reported as invalid and preventing the API from working.
+
