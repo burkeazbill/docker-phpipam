@@ -3,7 +3,7 @@ phpipam is an open-source web IP address management application. Its goal is to 
 
 Goal of this repository is to provide a lightweight docker image that can be used to have applciation running quickly.
 
-![NEED NEW SCREENSHOT](https://a.fsdn.com/con/app/proj/phpipam/screenshots/Screen%20Shot%202014-03-13%20at%2016.18.25.png)
+![PHP IPAM](screenshots/rainpolephpipam.png)
 
 ## Running the application
 I have tried to make it as simple as possible to run the application quickly. Therefore you can use docker-compose or just docker engine itself to start.
