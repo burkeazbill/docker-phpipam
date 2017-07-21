@@ -3,8 +3,6 @@ phpipam is an open-source web IP address management application. Its goal is to 
 
 Goal of this repository is to provide a lightweight docker image that can be used to have applciation running quickly.
 
-![PHP IPAM](screenshots/rainpolephpipam.png)
-
 ## Running the application
 I have tried to make it as simple as possible to run the application quickly. Therefore you can use docker-compose or just docker engine itself to start.
 
@@ -64,7 +62,7 @@ PROXY_USER     # Proxy Username
 PROXY_PASS     # Proxy Password  
 PROXY_USEAUTH  # Enable/Disable Proxy authentication  
 ```
-### VMware vPod use: (HOL / Livefire /vRO MasterClass)
+### vPod use: (HOL / Livefire /vRO MasterClass)
 Once you have run docker-compose up -d 
 1) Visit http://yourserver:8181 and choose the option to "Migrate phpipam installation"
 2) On the next screen, click "Automatic database migration"
@@ -76,6 +74,8 @@ You may now login with the following username / password: admin / VMware1!
 NOTE: The REST API has been enabled already in this configuration. To get started, you must:
 POST (using basic auth -- admin / VMware1! ) to http://yourserver:8181/api/rest/users/
 Then retrieve the token from the return and contine with your API usage as per the docs found here: https://phpipam.net/api/api_documentation/
+
+![PHP IPAM](screenshots/rainpolephpipam.png)
 
 ## Change log
 * **v1.0.0** : Initial fork RafPe/docker-phpipam
