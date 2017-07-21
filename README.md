@@ -71,7 +71,8 @@ Once you have run docker-compose up -d
 5) Click the M"igrate phpipam database", then click "Continue"
 
 You may now login with the following username / password: admin / VMware1!
-NOTE: The REST API has been enabled already in this configuration. To get started, you must:
+
+**NOTE:** The REST API has been enabled already in this configuration. To get started, you must:
 POST (using basic auth -- admin / VMware1! ) to http://yourserver:8181/api/rest/users/
 Then retrieve the token from the return and contine with your API usage as per the docs found here: https://phpipam.net/api/api_documentation/
 
