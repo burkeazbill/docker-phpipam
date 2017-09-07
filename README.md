@@ -1,7 +1,7 @@
 # phpIPam (PHP IP Address Management)
 phpipam is an open-source web IP address management application. Its goal is to provide light and simple IP address management application.
 
-Goal of this repository is to provide a lightweight docker image that can be used to have applciation running quickly.
+Goal of this repository is to provide a lightweight docker image that can be used to have the application running quickly.
 
 ## Running the application
 I have tried to make it as simple as possible to run the application quickly. Therefore you can use docker-compose or just docker engine itself to start.
